@@ -1,16 +1,22 @@
-import React, { Component } from "react";
-import Game from "./components/TicTac/Game";
+import React from "react";
 import "./App.css";
+import Navigation from "./component/Navigation";
+import Game from "./component/Game";
+import Home from "./component/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
+function App() {
+  return (
+    <Router>
       <div className="App">
-        <h1>Welcome to Programming grounds!</h1>
-        <Game />
+        <Navigation />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/Game" component={Game} />
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  );
 }
 
 export default App;
