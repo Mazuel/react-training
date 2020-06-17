@@ -44,7 +44,8 @@ class TicTacToe extends React.Component {
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
-    const winner = checkWinner(current.squares);
+    const winningLine = checkWinner(current.squares);
+    const winner = winningLine ? current.squares[winningLine[0]] : null;
 
     const moves = history.map((step, move) => {
       const desc = move ? "Go to move #" + move : "Go to game start";
@@ -65,6 +66,7 @@ class TicTacToe extends React.Component {
       <div className="game">
         <div className="game-board">
           <Board
+            winningLine={winningLine}
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
@@ -97,7 +99,7 @@ function checkWinner(squares) {
       squares[win[0]] === squares[win[1]] &&
       squares[win[0]] === squares[win[2]]
     ) {
-      return squares[win[0]];
+      return win;
     }
   }
   return null;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function Navigation() {
   const navStyle = {
@@ -9,14 +10,18 @@ function Navigation() {
   return (
     <nav className="navStyle">
       <Link style={navStyle} to="/">
-        <h3>Programming grounds</h3>
+        <Button>Programming grounds</Button>
       </Link>
       <ul className="nav-links">
         <Link style={navStyle} to="/games">
-          <li>Games</li>
+          <li>
+            <Button>Games</Button>
+          </li>
         </Link>
         <Link style={navStyle} to="/About">
-          <li>About</li>
+          <li>
+            <Button>About</Button>
+          </li>
         </Link>
       </ul>
     </nav>

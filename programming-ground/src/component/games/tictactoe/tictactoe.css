@@ -39,6 +39,18 @@ ul {
   width: 100px;
 }
 
+.winningSquare {
+  background: green;
+  border: 1px solid #999;
+  float: left;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 100px;
+  text-align: center;
+  width: 100px;
+}
+
 .square:focus {
   outline: none;
 }

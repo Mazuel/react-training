@@ -6,6 +6,8 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
+        winningLine={this.props.winningLine}
+        number={i}
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
       />
